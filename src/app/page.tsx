@@ -15,7 +15,7 @@ export default function HomePage() {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    async function fetchUsers() {
+    async function fetchUser() {
       try {
         const response = await fetch("/api/users");
         if (!response.ok) {
@@ -28,7 +28,7 @@ export default function HomePage() {
       }
     }
 
-    fetchUsers();
+    fetchUser();
   }, []); 
 
   return (
