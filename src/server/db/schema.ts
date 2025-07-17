@@ -10,20 +10,22 @@ import { index, pgTableCreator } from "drizzle-orm/pg-core";
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const createTable = pgTableCreator((name) => `ipt-peter3a-lab_${name}`);
+export const createTable = pgTableCreator((name) => `ipt-3a_${name}`);
 
 export const users = createTable(
   "user",
   (d) => ({
     id: d.integer().primaryKey().generatedByDefaultAsIdentity(),
     name: d.varchar({ length: 256 }),
-    email: d.varchar({ length: 256 }),
-    address: d.varchar({ length: 256 }),
+    email: d.varchar({ length: 256}),
+    address: d.varchar({ length: 256}),
     createdAt: d
       .timestamp({ withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     updatedAt: d.timestamp({ withTimezone: true }).$onUpdate(() => new Date()),
   }),
-  // (t) => [index("name_idx").on(t.name)],
-);
+ // (t) => [index("name_idx").on(t.name)],
+); 
+
+
