@@ -7,12 +7,11 @@ import "./src/env.js";
 /** @type {import("next").NextConfig} */
 const config = {
     typescript: {
-        ignoreBuildErrors: true,
-
+        ignoreBuildErrors: true, // Ignore TypeScript errors during build
     },
     eslint: {
-        ignoreDuringBuilds: true,
-    },
+        ignoreDuringBuilds: true, // Ignore ESLint errors during build
+    }
 };
 
 export default config;
